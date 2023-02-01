@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useEffect, useState } from "react";
 import QuestionItem from "./QuestionItem";
 
@@ -54,9 +53,9 @@ function QuestionList() {
   return (
     <section>
       <h1>Quiz Questions</h1>
-      <ul>{/* display QuestionItem components here after fetching */}</ul>
       <ul>{questionItems}</ul>
     </section>
   );
 }
+
 export default QuestionList;

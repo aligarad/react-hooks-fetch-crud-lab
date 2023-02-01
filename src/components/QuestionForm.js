@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 function QuestionForm(props) {
   const [formData, setFormData] = useState({
     prompt: "",
@@ -8,17 +9,16 @@ function QuestionForm(props) {
     answer4: "",
     correctIndex: 0,
   });
+
   function handleChange(event) {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
-  } 
-
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
     fetch("http://localhost:4000/questions", {
       method: "POST",
       headers: {
@@ -39,7 +39,6 @@ function QuestionForm(props) {
 
   return (
     <section>
-      <h1>New Question</h1>
       <h1>Add New Question</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -105,4 +104,5 @@ function QuestionForm(props) {
     </section>
   );
 }
+
 export default QuestionForm;
